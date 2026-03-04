@@ -83,7 +83,7 @@
         }
 
         @include mobile() {
-          gap: 20px;
+          gap: 15px;
           flex-direction: column;
           align-items: center;
         }
@@ -134,7 +134,8 @@
           }
 
           @include mobile() {
-            height: 250px;
+            height: auto;
+            min-height: 120px;
             border-radius: 20px;
             padding: 20px;
             display: flex;
@@ -211,22 +212,12 @@
             z-index: 2;
 
             @include mobile() {
-              position: absolute;
-              right: 10px;
-              bottom: 10px;
-              width: 140px !important;
-              height: 140px !important;
-              border-radius: 20px;
-              display: flex;
-              align-items: flex-end;
-              justify-content: flex-end;
+              display: none !important;
             }
             
             img {
               @include mobile() {
-                width: 100%;
-                height: 100%;
-                object-fit: contain;
+                display: none;
               }
             }
           }
@@ -288,12 +279,6 @@
             @include tablet() {
               height: 140px;
             }
-
-            @include mobile() {
-              width: 140px;
-              height: 140px;
-              margin-top: 0;
-            }
           }
         }
 
@@ -339,7 +324,7 @@
 
         @include mobile() {
           flex-direction: column;
-          gap: 20px;
+          gap: 15px;
           width: 100%;
         }
 
@@ -391,7 +376,8 @@
 
           @include mobile() {
             width: 100%;
-            height: 250px;
+            height: auto;
+            min-height: 120px;
             border-radius: 20px;
             padding: 20px;
             max-width: none;
@@ -469,12 +455,7 @@
             }
 
             @include mobile() {
-              position: absolute;
-              right: -10px;
-              bottom: -10px;
-              width: 140px;
-              height: 140px;
-              border-radius: 20px;
+              display: none;
             }
           }
         }
