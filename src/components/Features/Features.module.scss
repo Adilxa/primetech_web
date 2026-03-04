@@ -67,6 +67,10 @@
       gap: 35px;
       width: 100%;
 
+      @include mobile() {
+        gap: 20px;
+      }
+
       .blockTop {
         width: 100%;
         display: flex;
@@ -79,7 +83,7 @@
         }
 
         @include mobile() {
-          gap: 10px;
+          gap: 20px;
           flex-direction: column;
           align-items: center;
         }
@@ -102,7 +106,7 @@
           }
         }
 
-        .firstCard {
+        .firstCard, .secondCard, .thirdCard {
           position: relative;
           overflow: hidden;
           background: linear-gradient(
@@ -114,36 +118,28 @@
           box-shadow: 4px 4px 0px 0px #f5f5f50a inset;
           height: 500px;
           border-radius: 40px;
-          padding: 40px 0px 0px 40px;
           display: flex;
-          flex-direction: column;
-
+          
           &::after {
             content: "";
             position: absolute;
             bottom: 0;
             right: 0;
-            width: 150px;
-            height: 150px;
-            background: radial-gradient(
-              circle at bottom right,
-              rgba(59, 130, 246, 0.6) 0%,
-              rgba(59, 130, 246, 0.3) 30%,
-              rgba(59, 130, 246, 0) 70%
-            );
             z-index: 1;
             pointer-events: none;
           }
 
           @include tablet() {
-            padding: 30px 0px 0px 30px;
             height: 400px;
           }
 
           @include mobile() {
-            padding: 13px 14px 0px 14px;
-            height: 200px;
+            height: 160px;
             border-radius: 20px;
+            padding: 17px 0px 0px 17px;
+            display: flex;
+            align-items: flex-start;
+            flex-direction: row;
           }
 
           .text {
@@ -157,6 +153,7 @@
 
             @include mobile() {
               width: 100%;
+              gap: 5px;
             }
 
             h5 {
@@ -171,13 +168,11 @@
               }
 
               @include mobile() {
-                font-size: 12px;
-                width: 100%;
-
-                font-weight: 600;
                 font-size: 16px;
+                width: 100%;
                 line-height: 90%;
                 letter-spacing: -6%;
+                margin-bottom: 0;
               }
             }
 
@@ -189,13 +184,15 @@
               color: #f5f5f5;
               width: 95%;
 
-              @include mobile() {
-                width: 85%;
-                font-family: "Mail Sans Roman", sans-serif;
-                font-weight: 400;
-                font-size: 11px;
+              @include tablet() {
+                font-size: 12px;
                 line-height: 100%;
-                letter-spacing: 0%;
+              }
+
+              @include mobile() {
+                width: 90%;
+                font-size: 12px;
+                line-height: 100%;
               }
             }
 
@@ -203,131 +200,82 @@
               object-fit: cover;
 
               @include mobile() {
-                width: 18px;
-                height: 18px;
+                width: 22px;
+                height: 22px;
               }
             }
           }
 
           .coin {
-            display: block;
-            position: absolute;
-            right: 0px;
-            bottom: 0px;
+            position: relative;
             z-index: 2;
-            filter: drop-shadow(0 0 55px rgba(59, 130, 246, 0.7)) brightness(1.1);
-            border-radius: 40px;
-            max-width: 65%;
 
             @include mobile() {
-              width: 110px;
-              height: 110px;
+              position: absolute;
+              right: 0;
+              bottom: 0;
+              width: 160px !important;
+              height: 160px !important;
               border-radius: 20px;
-              right: 0px;
-              bottom: 0px;
+              display: flex;
+              align-items: flex-end;
+              justify-content: flex-end;
+            }
+            
+            img {
+              @include mobile() {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+              }
             }
           }
         }
 
+        .firstCard {
+          padding: 40px 0px 0px 40px;
+          flex-direction: column;
+          &::after {
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(
+              circle at bottom right,
+              rgba(59, 130, 246, 0.6) 0%,
+              rgba(59, 130, 246, 0.3) 30%,
+              rgba(59, 130, 246, 0) 70%
+            );
+          }
+          @include tablet() {
+            padding: 30px 0px 0px 30px;
+          }
+          @include mobile() {
+            padding: 17px 0px 0px 17px;
+            flex-direction: row;
+          }
+          .coin {
+            display: block;
+            position: absolute;
+            right: 0px;
+            bottom: 0px;
+            filter: drop-shadow(0 0 55px rgba(59, 130, 246, 0.7)) brightness(1.1);
+            border-radius: 40px;
+            max-width: 65%;
+          }
+        }
+
         .secondCard {
-          background: linear-gradient(
-            305.11deg,
-            rgba(255, 255, 255, 0.31) -129.42%,
-            rgba(255, 255, 255, 0.04) 76.25%
-          );
-          border: 1px solid #f5f5f51a;
-          box-shadow: 4px 4px 0px 0px #f5f5f50a inset;
-          height: 500px;
-          border-radius: 40px;
-          padding: 40px 40px 40px 40px;
-          display: flex;
+          padding: 40px;
           align-items: start;
           flex-direction: column;
-
           @include tablet() {
             padding: 30px;
-            height: 400px;
           }
-
           @include mobile() {
-            padding: 13px 8px;
-            height: 200px;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            padding: 17px 0px 0px 17px;
+            flex-direction: row;
+            align-items: flex-start;
           }
-
-          .text {
-            display: flex;
-            align-items: start;
-            flex-direction: column;
-            gap: 5px;
-            width: 95%;
-
-            @include tablet() {
-              gap: 8px;
-            }
-
-            img {
-              @include mobile() {
-                width: 16px;
-                height: 16px;
-              }
-            }
-
-            h5 {
-              font-weight: 600;
-              font-size: 36px;
-              color: #f5f5f5;
-              margin-bottom: 5px;
-
-              @include tablet() {
-                font-size: 28px;
-                margin-bottom: 0;
-              }
-
-              @include mobile() {
-                font-size: 12px;
-                width: 100%;
-
-                font-weight: 600;
-                font-size: 16px;
-                line-height: 90%;
-                letter-spacing: -6%;
-              }
-            }
-
-            p {
-              font-family: "Mail Sans Roman", sans-serif;
-              font-weight: 400;
-              font-size: 18px;
-              line-height: 1.3;
-              color: #f5f5f5;
-              width: 95%;
-
-              @include tablet() {
-                font-weight: 400;
-                font-size: 12px;
-                line-height: 100%;
-                letter-spacing: 0%;
-              }
-
-              @include mobile() {
-                width: 95%;
-                font-family: "Mail Sans Roman", sans-serif;
-                font-weight: 400;
-                font-size: 12px;
-                line-height: 100%;
-                letter-spacing: 0%;
-              }
-            }
-
-            img {
-              object-fit: cover;
-            }
-          }
-
+          
           .coin {
             display: flex;
             align-items: end;
@@ -340,30 +288,13 @@
             @include tablet() {
               height: 140px;
             }
-
-            @include mobile() {
-              width: 150px;
-              height: 60px;
-            }
-
-            img {
-              @include mobile() {
-                width: 150px;
-                height: 130px;
-              }
-            }
           }
         }
 
         .thirdCard {
-          position: relative;
-          overflow: hidden;
-
+          padding: 40px 0px 0px 40px;
+          flex-direction: column;
           &::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            right: 0;
             left: 0;
             width: 100%;
             height: 110px;
@@ -373,109 +304,18 @@
               rgba(59, 130, 246, 0.3) 30%,
               rgba(59, 130, 246, 0) 70%
             );
-            z-index: 1;
-            pointer-events: none;
           }
-
-          background: linear-gradient(
-            305.11deg,
-            rgba(255, 255, 255, 0.31) -129.42%,
-            rgba(255, 255, 255, 0.04) 76.25%
-          );
-          border: 1px solid #f5f5f51a;
-          box-shadow: 4px 4px 0px 0px #f5f5f50a inset;
-          height: 500px;
-          border-radius: 40px;
-          padding: 40px 0px 0px 40px;
-
           @include tablet() {
             padding: 30px 0px 0px 30px;
-            height: 400px;
           }
-
           @include mobile() {
-            padding: 13px 8px;
-            height: 200px;
-            border-radius: 20px;
+            padding: 17px 0px 0px 17px;
+            flex-direction: row;
           }
-
-          .text {
-            display: flex;
-            align-items: start;
-            flex-direction: column;
-            gap: 5px;
-            width: 95%;
-
-            @include tablet() {
-              gap: 8px;
-            }
-
-            h5 {
-              font-weight: 600;
-              font-size: 36px;
-              color: #f5f5f5;
-              margin-bottom: 5px;
-
-              @include tablet() {
-                font-size: 28px;
-                margin-bottom: 0;
-              }
-
-              @include mobile() {
-                font-size: 12px;
-                width: 100%;
-
-                font-weight: 600;
-                font-size: 16px;
-                line-height: 90%;
-                letter-spacing: -6%;
-              }
-            }
-            p {
-              font-family: "Mail Sans Roman", sans-serif;
-              font-weight: 400;
-              font-size: 18px;
-              line-height: 1.3;
-              color: #f5f5f5;
-              width: 95%;
-
-              @include tablet() {
-                font-weight: 400;
-                font-size: 12px;
-                line-height: 100%;
-                letter-spacing: 0%;
-              }
-
-              @include mobile() {
-                width: 95%;
-                font-family: "Mail Sans Roman", sans-serif;
-                font-weight: 400;
-                font-size: 12px;
-                line-height: 100%;
-                letter-spacing: 0%;
-              }
-            }
-
-            img {
-              object-fit: cover;
-              @include mobile() {
-                width: 16px;
-                height: 16px;
-              }
-            }
-          }
-
           .coin {
-            position: relative;
-            z-index: 2;
-            border-radius: 40px;
             position: absolute;
             bottom: 0;
-
-            @include mobile() {
-              width: 150px;
-              height: 100px;
-            }
+            border-radius: 40px;
           }
         }
       }
@@ -614,8 +454,12 @@
             }
 
             @include mobile() {
+              position: absolute;
+              right: 0;
+              bottom: 0;
               width: 160px;
               height: 160px;
+              border-radius: 20px;
             }
           }
         }
@@ -623,3 +467,4 @@
     }
   }
 }
+
