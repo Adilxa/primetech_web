@@ -29,12 +29,12 @@
       flex-direction: column;
       .subtitle {
         font-family: "Montserrat";
-        color: #ffeb3b;
+        color: #60A5FA;
         display: block;
         font-size: 18px;
         margin-bottom: 10px;
-        background: #ffbe2e1c;
-        border: 1px solid #ffffff1a;
+        background: rgba(59, 130, 246, 0.15);
+        border: 1px solid #3B82F633;
         padding: 16px 20px;
         width: 250px;
         border-radius: 100px;
@@ -128,7 +128,7 @@
               color: white;
               padding: 0.6rem 1rem;
               border-radius: 20px;
-              border: 1px solid;
+              border: 1px solid #3B82F644;
               font-family: "Montserrat";
               font-weight: 500;
               font-size: 24px;
@@ -137,12 +137,6 @@
               letter-spacing: -4%;
               text-align: center;
               vertical-align: middle;
-
-              border-image-source: linear-gradient(
-                95.73deg,
-                rgba(255, 190, 46, 0.24) -63.69%,
-                rgba(255, 255, 255, 0.24) 95.44%
-              );
 
               @include mobile() {
                 font-size: 12px;
@@ -157,12 +151,12 @@
           display: flex;
           align-items: center;
           justify-content: center;
-          border: 1px solid #ffffff21;
+          border: 1px solid #3B82F633;
           border-radius: 40px;
           background: linear-gradient(
             126.54deg,
             rgba(255, 255, 255, 0.05) 28.72%,
-            rgba(255, 255, 0, 0.05) 93.85%
+            rgba(59, 130, 246, 0.08) 93.85%
           );
 
           @include mobile() {
@@ -233,8 +227,8 @@
             background: linear-gradient(
               to right,
               transparent,
-              yellow 20%,
-              yellow 80%,
+              #3B82F6 20%,
+              #3B82F6 80%,
               transparent
             );
             border-radius: 4px;

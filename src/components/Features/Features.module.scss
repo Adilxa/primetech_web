@@ -32,12 +32,12 @@
       flex-direction: column;
 
       .subtitle {
-        color: #ffeb3b;
+        color: #60A5FA;
         display: block;
         font-size: 18px;
         margin-bottom: 10px;
-        background: #ffbe2e1c;
-        border: 1px solid #ffffff1a;
+        background: rgba(59, 130, 246, 0.15);
+        border: 1px solid #3B82F633;
         padding: 16px 20px;
         width: 200px;
         border-radius: 100px;
@@ -71,27 +71,33 @@
         width: 100%;
         display: flex;
         gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        @include tablet() {
+          gap: 15px;
+        }
 
         @include mobile() {
-          gap: 6px;
-          padding-bottom: 10px;
-          overflow-x: scroll;
-          white-space: normal;
+          gap: 10px;
+          flex-direction: column;
+          align-items: center;
         }
 
         .firstCard,
         .secondCard,
         .thirdCard {
           flex: 1;
-          min-width: 510px;
+          min-width: 320px;
+          max-width: 100%;
 
           @include tablet() {
-            min-width: 300px;
+            min-width: 280px;
+            flex: 1 1 calc(33% - 15px);
           }
 
           @include mobile() {
-            min-width: 180px;
-            width: 200px;
+            min-width: 100%;
             width: 100%;
           }
         }
@@ -121,9 +127,9 @@
             height: 150px;
             background: radial-gradient(
               circle at bottom right,
-              rgba(255, 215, 0, 0.6) 0%,
-              rgba(255, 215, 0, 0.3) 30%,
-              rgba(255, 215, 0, 0) 70%
+              rgba(59, 130, 246, 0.6) 0%,
+              rgba(59, 130, 246, 0.3) 30%,
+              rgba(59, 130, 246, 0) 70%
             );
             z-index: 1;
             pointer-events: none;
@@ -209,7 +215,7 @@
             right: 0px;
             bottom: 0px;
             z-index: 2;
-            filter: drop-shadow(0 0 55px rgba(255, 215, 0, 0.7)) brightness(1.1);
+            filter: drop-shadow(0 0 55px rgba(59, 130, 246, 0.7)) brightness(1.1);
             border-radius: 40px;
             max-width: 65%;
 
@@ -363,9 +369,9 @@
             height: 110px;
             background: radial-gradient(
               at bottom,
-              rgba(200, 200, 0, 0.3) 0%,
-              rgba(255, 215, 0, 0.3) 30%,
-              rgba(255, 215, 0, 0) 70%
+              rgba(59, 130, 246, 0.3) 0%,
+              rgba(59, 130, 246, 0.3) 30%,
+              rgba(59, 130, 246, 0) 70%
             );
             z-index: 1;
             pointer-events: none;
@@ -506,9 +512,9 @@
             height: 100%;
             background: radial-gradient(
               circle at bottom right,
-              rgba(255, 215, 0, 0.2) 0%,
-              rgba(255, 215, 0, 0.3) 30%,
-              rgba(255, 215, 0, 0) 70%
+              rgba(59, 130, 246, 0.2) 0%,
+              rgba(59, 130, 246, 0.3) 30%,
+              rgba(59, 130, 246, 0) 70%
             );
             z-index: 1;
             pointer-events: none;

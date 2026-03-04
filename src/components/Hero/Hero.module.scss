@@ -38,6 +38,12 @@
     gap: 50px;
     width: 100%;
 
+    @include tablet() {
+      padding: 50px 40px;
+      gap: 30px;
+      border-radius: 40px;
+    }
+
     @include mobile() {
       padding: 30px 15px;
       border-radius: 20px;
@@ -49,6 +55,10 @@
       align-items: start;
       justify-content: space-between;
       gap: 60px;
+
+      @include tablet() {
+        gap: 30px;
+      }
 
       @include mobile() {
         display: flex;
@@ -62,20 +72,32 @@
         align-items: start;
         flex-direction: column;
         gap: 60px;
+        flex: 1;
+
+        @include tablet() {
+          gap: 30px;
+        }
 
         @include mobile() {
           gap: 15px;
+          width: 100%;
         }
 
         h1 {
           font-family: "Montserrat";
           font-weight: 700;
           font-size: 60px;
-          width: 700px;
+          max-width: 700px;
+          width: 100%;
+          line-height: 1.1;
+
+          @include tablet() {
+            font-size: 42px;
+          }
 
           @include mobile() {
             font-size: 28px;
-            width: 100%;
+            text-align: center;
           }
         }
 
@@ -85,6 +107,11 @@
           align-items: start;
           flex-direction: column;
           gap: 40px;
+
+          @include tablet() {
+            width: 100%;
+            gap: 25px;
+          }
 
           @include mobile() {
             width: 100%;
@@ -98,8 +125,13 @@
             color: #f5f5f5;
             opacity: 0.7;
 
+            @include tablet() {
+              font-size: 20px;
+            }
+
             @include mobile() {
               font-size: 16px;
+              text-align: center;
             }
           }
 
@@ -121,9 +153,16 @@
               box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
             }
 
+            @include tablet() {
+              font-size: 18px;
+              padding: 14px 22px;
+            }
+
             @include mobile() {
               font-size: 16px;
               padding: 14px 20px;
+              width: 100%;
+              max-width: 300px;
             }
           }
         }
@@ -134,10 +173,26 @@
         align-items: center;
         flex-direction: column;
         gap: 25px;
+        width: 350px;
+        flex-shrink: 0;
 
-        img {
+        @include tablet() {
+          gap: 15px;
+          width: 300px;
+        }
+
+        @include mobile() {
+          width: 100%;
+        }
+
+        svg {
           width: 300px;
           height: 300px;
+
+          @include tablet() {
+            width: 220px;
+            height: 220px;
+          }
 
           @include mobile() {
             width: 180px;
@@ -151,9 +206,15 @@
           font-size: 30px;
           color: #ffffff;
           text-align: center;
-          width: 70%;
+          width: 100%;
+
+          @include tablet() {
+            font-size: 22px;
+          }
+
           @include mobile() {
-            font-size: 14px;
+            font-size: 16px;
+            width: 90%;
           }
         }
       }
@@ -164,19 +225,29 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 60px;
+      
+      @include tablet() {
+        gap: 30px;
+      }
+      
       @include mobile() {
         flex-direction: column;
         gap: 15px;
+        align-items: center;
       }
 
       .comission {
-        width: 30%;
         display: flex;
         align-items: start;
         flex-direction: column;
         gap: 15px;
+        flex: 1;
+        
         @include mobile() {
           width: 100%;
+          align-items: center;
+          text-align: center;
         }
 
         h4 {
@@ -184,9 +255,15 @@
           font-weight: 700;
           font-size: 36px;
           color: #f5f5f5;
+          line-height: 1.2;
+          
+          @include tablet() {
+            font-size: 28px;
+          }
+          
           @include mobile() {
             font-size: 22px;
-            width: 80%;
+            width: 100%;
           }
         }
 
@@ -195,8 +272,12 @@
           font-size: 25px;
           color: #f5f5f5;
 
+          @include tablet() {
+            font-size: 20px;
+          }
+
           @include mobile() {
-            font-size: 18px;
+            font-size: 16px;
           }
         }
       }
@@ -206,12 +287,18 @@
         align-items: center;
         justify-content: center;
         gap: 30px;
-        padding-right: 60px;
+        width: 350px;
+        flex-shrink: 0;
+        
+        @include tablet() {
+          gap: 20px;
+          width: 300px;
+        }
+        
         @include mobile() {
           width: 100%;
-          justify-content: space-between;
+          justify-content: center;
           margin-top: 15px;
-          padding-right: 0;
         }
 
         span {
@@ -219,6 +306,11 @@
           font-family: "Montserrat";
           font-weight: 700;
           font-size: 50px;
+          
+          @include tablet() {
+            font-size: 38px;
+          }
+          
           @include mobile() {
             font-size: 28px;
           }
@@ -227,3 +319,4 @@
     }
   }
 }
+

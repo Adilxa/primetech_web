@@ -3,7 +3,6 @@ import React from "react";
 import styles from "./BurgerMenu.module.scss";
 import Link from "next/link";
 import { useHeaderStore } from "@/stores/useHeaderStore";
-import LanguageSwitcher from "@/ui/LanguageSwitcher/LanguageSwitcher";
 import { useTranslation } from "@/hooks/useTranslation";
 import { useRouter } from "next/navigation";
 
@@ -13,15 +12,24 @@ const BurgerMenu: React.FC = () => {
 
     const router = useRouter()
 
+    const handleLinkClick = () => {
+        setIsOpenModal(false);
+    };
+
     return (
-        <div className={styles.main}>
-            <nav
-                className={`${styles.navMenu} ${isOpenModal ? styles.active : ""}`}
-            >
+        <div className={`${styles.main} ${isOpenModal ? styles.active : ""}`}>
+            <nav className={styles.navMenu}>
+                <div className={styles.links}>
+                    <Link href="/#main" onClick={handleLinkClick}>{t.home}</Link>
+                    <Link href="/#info" onClick={handleLinkClick}>{t.aboutSystem}</Link>
+                    <Link href="/#working" onClick={handleLinkClick}>{t.howToPay}</Link>
+                    <Link href="/#connecting" onClick={handleLinkClick}>{t.connection}</Link>
+                </div>
                 <button
-                    onClick={() => router.push(
-                        "login"
-                    )}
+                    onClick={() => {
+                        handleLinkClick();
+                        router.push("login");
+                    }}
                 >{t.account}</button>
             </nav>
         </div>

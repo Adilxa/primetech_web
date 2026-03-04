@@ -8,7 +8,6 @@ import { EMAILJS_CONFIG } from "@/config/emailjs.config";
 interface FormData {
     name: string;
     email: string;
-    phone: string;
     question: string;
     privacyAccepted: boolean;
 }
@@ -18,7 +17,6 @@ const ContactBot: React.FC = () => {
     const [formData, setFormData] = useState<FormData>({
         name: "",
         email: "",
-        phone: "",
         question: "",
         privacyAccepted: false
     });
@@ -32,7 +30,6 @@ const ContactBot: React.FC = () => {
         ru: {
             fillAllFields: "Заполните все поля",
             invalidEmail: "Неверный email",
-            invalidPhone: "Неверный формат номера. Используйте формат: +996XXXXXXXXX",
             acceptPrivacy: "Примите политику конфиденциальности",
             failedToSend: "Не удалось отправить",
             successTitle: "Спасибо!",
@@ -42,7 +39,6 @@ const ContactBot: React.FC = () => {
         kg: {
             fillAllFields: "Бардык талааларды толтуруңуз",
             invalidEmail: "Туура эмес email",
-            invalidPhone: "Туура эмес формат. Колдонуңуз: +996XXXXXXXXX",
             acceptPrivacy: "Купуялуулук саясатын кабыл алыңыз",
             failedToSend: "Жиберүү мүмкүн болбоду",
             successTitle: "Рахмат!",
@@ -53,15 +49,12 @@ const ContactBot: React.FC = () => {
 
     const currentMessages = messages[language as keyof typeof messages] || messages.ru;
 
-    const handleInputChange = (e: ChangeEvent<HTMLInputElement>): void => {
-        const {name, value, type, checked} = e.target;
+    const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
+        const {name, value} = e.target;
+        const type = 'type' in e.target ? e.target.type : 'text';
+        const checked = 'checked' in e.target ? e.target.checked : false;
 
-        let newValue = type === "checkbox" ? checked : value;
-
-        // Форматируем номер телефона при вводе
-        if (name === "phone" && typeof newValue === "string") {
-            newValue = formatPhoneNumber(newValue);
-        }
+        const newValue = type === "checkbox" ? checked : value;
 
         setFormData(prev => ({
             ...prev,
@@ -75,45 +68,16 @@ const ContactBot: React.FC = () => {
         return emailRegex.test(email);
     };
 
-    const validatePhone = (phone: string): boolean => {
-        // Формат: +996XXXXXXXXX (996 + 9 цифр)
-        const phoneRegex = /^\+996\d{9}$/;
-        return phoneRegex.test(phone);
-    };
-
-    const formatPhoneNumber = (value: string): string => {
-        // Удаляем все нецифровые символы кроме +
-        let cleaned = value.replace(/[^\d+]/g, '');
-
-        // Если начинается с 996, добавляем +
-        if (cleaned.startsWith('996')) {
-            cleaned = '+' + cleaned;
-        }
-
-        // Если не начинается с +996, добавляем префикс
-        if (!cleaned.startsWith('+996')) {
-            cleaned = '+996' + cleaned.replace(/^\+?/, '');
-        }
-
-        // Ограничиваем длину (+996 + 9 цифр = 13 символов)
-        return cleaned.slice(0, 13);
-    };
-
     const handleSubmit = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
         e.preventDefault();
 
-        if (!formData.name.trim() || !formData.email.trim() || !formData.phone.trim() || !formData.question.trim()) {
+        if (!formData.name.trim() || !formData.email.trim() || !formData.question.trim()) {
             setError(currentMessages.fillAllFields);
             return;
         }
 
         if (!validateEmail(formData.email)) {
             setError(currentMessages.invalidEmail);
-            return;
-        }
-
-        if (!validatePhone(formData.phone)) {
-            setError(currentMessages.invalidPhone);
             return;
         }
 
@@ -130,11 +94,9 @@ const ContactBot: React.FC = () => {
                 EMAILJS_CONFIG.CONTACT_BOT.SERVICE_ID,
                 EMAILJS_CONFIG.CONTACT_BOT.TEMPLATE_ID,
                 {
-                    from_name: formData.name,
-                    from_email: formData.email,
-                    from_phone: formData.phone,
-                    message: formData.question,
-                    to_name: "Support Team",
+                    name: formData.name,
+                    email: formData.email,
+                    question: formData.question,
                 },
                 EMAILJS_CONFIG.CONTACT_BOT.PUBLIC_KEY
             );
@@ -142,7 +104,6 @@ const ContactBot: React.FC = () => {
             setFormData({
                 name: "",
                 email: "",
-                phone: "",
                 question: "",
                 privacyAccepted: false
             });
@@ -186,22 +147,17 @@ const ContactBot: React.FC = () => {
                                 disabled={isSubmitting}
                             />
 
-                            <input
-                                type="tel"
-                                name="phone"
-                                placeholder={t.placeholderPhone}
-                                value={formData.phone}
-                                onChange={handleInputChange}
-                                disabled={isSubmitting}
-                            />
-
-                            <input
-                                type="text"
+                            <textarea
                                 name="question"
                                 placeholder={t.placeholderQuestion}
                                 value={formData.question}
                                 onChange={handleInputChange}
                                 disabled={isSubmitting}
+                                rows={3}
+                                style={{
+                                    resize: 'vertical',
+                                    minHeight: '80px'
+                                }}
                             />
 
                             <div className={s.check}>

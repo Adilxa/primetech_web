@@ -1,22 +1,13 @@
 import { create } from "zustand";
-import { persist } from "zustand/middleware";
 
 interface LanguageState {
   language: string;
   setLanguage: (language: string) => void;
 }
 
-export const useLanguageStore = create<LanguageState>()(
-  persist(
-    (set) => ({
-      language: "ru",
-      setLanguage: (language: string) => {
-        console.log("Setting language to:", language);
-        set({ language });
-      },
-    }),
-    {
-      name: "language-store",
-    }
-  )
-);
+export const useLanguageStore = create<LanguageState>((set) => ({
+  language: "ru",
+  setLanguage: (language: string) => {
+    set({ language });
+  },
+}));

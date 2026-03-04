@@ -5,51 +5,49 @@
 }
 
 .main {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 100vh;
+  background: #12151d;
+  z-index: 9999;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &.active {
+    transform: translateX(0);
+  }
 
   .navMenu {
-    position: fixed;
-    top: -10px;
-    left: 0;
-    width: 100%;
-    min-height: 100vh;
-    backdrop-filter: blur(100px);
-    transform: translateX(100%);
-    transition: transform 0.3s ease-in-out;
-    margin-top: 100px;
-    border-radius: 15px;
-    z-index: 99999;
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
-    gap: 50px;
-    padding: 20px;
+    gap: 40px;
+    width: 100%;
 
-
-    &.active {
-      transform: translateX(0);
-    }
-
-    .link {
+    .links {
       display: flex;
       flex-direction: column;
-      align-items: end;
-      gap: 20px;
+      align-items: center;
+      gap: 30px;
 
       a {
         font-family: "Montserrat";
         font-weight: 500;
-        font-size: 18px;
-        line-height: 100%;
-        letter-spacing: 0%;
-        vertical-align: middle;
+        font-size: 24px;
         color: #f5f5f5;
+        text-decoration: none;
       }
     }
 
     button {
-      padding: 15px 24px;
+      padding: 15px 30px;
       border-radius: 16px;
       border: none;
       color: #ffffff;
@@ -58,7 +56,6 @@
       font-size: 20px;
       background: #3B82F6;
       width: fit-content;
-      margin: 0 auto;
       cursor: pointer;
       transition: all 0.3s ease;
 

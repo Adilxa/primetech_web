@@ -55,8 +55,8 @@ const LicensesSlider = () => {
                 {/* Header */}
                 <div className="text-center mb-12 flex items-center flex-col">
                     <span
-                        style={{padding: "15px 20px", color: "#ffeb3b", marginBottom: "10px"}}
-                        className="inline-block bg-yellow-500/10 border border-white/10 text-yellow-400 px-5 py-4 rounded-full text-lg mb-2.5 w-64">
+                        style={{padding: "15px 20px", color: "#60A5FA", marginBottom: "10px", background: "rgba(59, 130, 246, 0.15)", border: "1px solid rgba(59, 130, 246, 0.2)"}}
+                        className="inline-block px-5 py-4 rounded-full text-lg mb-2.5 w-64">
                         {t.ourDocuments}
                     </span>
                     <h2 style={{marginBottom: "25px"}} className="text-4xl md:text-5xl font-bold leading-tight m-0">
@@ -71,7 +71,7 @@ const LicensesSlider = () => {
                         <PhotoProvider>
                             <PhotoView src={getImageSrc(images[currentSlide].src)}>
                                 <div
-                                    className="w-full flex items-center justify-center border border-white/13 rounded-3xl md:rounded-[40px] bg-gradient-to-br from-white/5 to-yellow-500/5 cursor-pointer transition-transform duration-300 p-4 relative">
+                                    className="w-full flex items-center justify-center border border-blue-500/20 rounded-3xl md:rounded-[40px] bg-gradient-to-br from-white/5 to-blue-500/10 cursor-pointer transition-transform duration-300 p-4 relative">
                                     <div className="w-full relative" style={{height: '500px'}}>
                                         <Image
                                             src={images[currentSlide].src}

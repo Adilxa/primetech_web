@@ -2,7 +2,7 @@
   width: 105px;
   height: 40px;
   background-color: #000;
-  border: 2px solid #fbe300;
+  border: 2px solid #3B82F6;
   border-radius: 20px;
   position: relative;
   cursor: pointer;
@@ -24,13 +24,13 @@
   transform: translateY(-50%);
   width: 32px;
   height: 32px;
-  background-color: #fbe300;
+  background-color: #3B82F6;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: transform 0.4s ease;
-  box-shadow: 0 0 10px rgba(251, 227, 0, 0.5);
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
 }
 
 .sliderRight {

@@ -1,6 +1,7 @@
 import type {Metadata, Viewport} from "next";
 import "./globals.scss";
 import {Inter, Montserrat} from "next/font/google";
+import {Providers} from "@/components/Providers";
 
 const inter = Inter({
     subsets: ["latin", "cyrillic"],
@@ -64,7 +65,9 @@ export default function RootLayout({
     return (
         <html lang="ru" className={`${inter.variable} ${montserrat.variable}`}>
         <body>
-        {children}
+        <Providers>
+            {children}
+        </Providers>
         </body>
         </html>
     );
