@@ -1,19 +1,6 @@
 import type {Metadata, Viewport} from "next";
 import "./globals.scss";
-import {Inter, Montserrat} from "next/font/google";
 import {Providers} from "@/components/Providers";
-
-const inter = Inter({
-    subsets: ["latin", "cyrillic"],
-    display: "swap",
-    variable: "--font-inter",
-});
-
-const montserrat = Montserrat({
-    subsets: ["latin", "cyrillic"],
-    display: "swap",
-    variable: "--font-montserrat",
-});
 
 export const viewport: Viewport = {
     width: 'device-width',
@@ -63,7 +50,7 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="ru" className={`${inter.variable} ${montserrat.variable}`}>
+        <html lang="ru">
         <body>
         <Providers>
             {children}
