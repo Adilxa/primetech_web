@@ -24,6 +24,7 @@ const BurgerMenu: React.FC = () => {
                     <Link href="/#info" onClick={handleLinkClick}>{t.aboutSystem}</Link>
                     <Link href="/#working" onClick={handleLinkClick}>{t.howToPay}</Link>
                     <Link href="/#connecting" onClick={handleLinkClick}>{t.connection}</Link>
+                    <Link href="/terms" onClick={handleLinkClick}>{t.termsLink}</Link>
                 </div>
                 <button
                     onClick={() => {
