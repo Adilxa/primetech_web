@@ -12,7 +12,8 @@
       "WebFetch(domain:altynpay.kg)",
       "Bash(npm run build:*)",
       "Bash(pkill -f \"next\" rm -rf /Users/adilhanimerov/Desktop/Dev/millionere/primetech_web/.next npm run build)",
-      "Bash(lsof:*)"
+      "Bash(lsof:*)",
+      "Bash(npx tsc:*)"
     ],
     "deny": [],
     "ask": []

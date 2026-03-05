@@ -25,6 +25,7 @@ const Header = () => {
                             <Link href="/#info">{t.aboutSystem}</Link>
                             <Link href="/#working">{t.howToPay}</Link>
                             <Link href="/#connecting">{t.connection}</Link>
+                            <Link href="/terms">{t.termsLink}</Link>
                         </div>
                         <div className={s.btns}>
                             <LanguageSwitcher />
