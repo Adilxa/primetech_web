@@ -18,7 +18,7 @@ const Terms = () => {
             <div className="container">
                 <header className={s.header}>
                     <Link href="/" className={s.logo}>
-                        <h2>PRIME TECH</h2>
+                        <h2>PRIMETEK</h2>
                     </Link>
                     <div className={s.headerActions}>
                         <LanguageSwitcher />

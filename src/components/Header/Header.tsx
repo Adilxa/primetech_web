@@ -16,7 +16,7 @@ const Header = () => {
             <div className="container">
                 <div className={s.content}>
                     <Link href="/" className={s.logo}>
-                        PRIME TECH
+                        PRIMETEK
                     </Link>
 
                     <nav className={s.nav}>

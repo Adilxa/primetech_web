@@ -160,5 +160,70 @@
         }
       }
     }
+
+    .bottom {
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid #f5f5f524;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+
+      @include mobile() {
+        flex-direction: column;
+        align-items: start;
+        gap: 15px;
+      }
+
+      .requisites {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        p {
+          font-family: "Inter";
+          font-weight: 400;
+          font-size: 14px;
+          color: #a0a0a0;
+          margin: 0;
+        }
+      }
+
+      .licenses {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        flex-wrap: wrap;
+
+        @include mobile() {
+          flex-direction: column;
+          align-items: start;
+          gap: 8px;
+        }
+
+        span {
+          font-family: "Inter";
+          font-weight: 500;
+          font-size: 14px;
+          color: #a0a0a0;
+        }
+
+        a {
+          font-family: "Inter";
+          font-weight: 400;
+          font-size: 14px;
+          color: #3B82F6;
+          text-decoration: none;
+          transition: opacity 0.2s ease;
+
+          &:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
   }
 }

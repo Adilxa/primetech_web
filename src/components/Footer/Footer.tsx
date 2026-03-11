@@ -14,7 +14,7 @@ const Footer = () => {
                 <div className={s.content}>
                     <header>
                         <Link href="/">
-                            <h2 className={s.logo}>PRIME TECH</h2>
+                            <h2 className={s.logo}>PRIMETEK</h2>
                         </Link>
 
                         <nav>
@@ -57,6 +57,18 @@ const Footer = () => {
                                 </Link>
                             </div>
                         )}
+                    </div>
+
+                    <div className={s.bottom}>
+                        <div className={s.requisites}>
+                            <p>ООО «ПраймТек»</p>
+                            <p>ИНН: 02810202410124</p>
+                        </div>
+                        <div className={s.licenses}>
+                            <span>{t.licenses}:</span>
+                            <a href="/license-1.pdf" target="_blank" rel="noopener noreferrer">Лицензия №1</a>
+                            <a href="/license-2.pdf" target="_blank" rel="noopener noreferrer">Лицензия №2</a>
+                        </div>
                     </div>
                 </div>
             </div>

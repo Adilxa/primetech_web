@@ -12,11 +12,11 @@ export const metadata: Metadata = {
     metadataBase: new URL('https://primetech.kg'),
     manifest: '/manifest.json',
     title: {
-        default: "Primetech | Быстрые и безопасные платежи",
-        template: "%s | Primetech"
+        default: "Primetek | Быстрые и безопасные платежи",
+        template: "%s | Primetek"
     },
-    description: "Primetech - надежная платежная система для быстрых переводов и оплаты услуг. Безопасные транзакции, выгодные тарифы и круглосуточная поддержка.",
-    keywords: ["платежная система", "онлайн платежи", "денежные переводы", "электронные платежи", "финансовые услуги", "Primetech"],
+    description: "Primetek - надежная платежная система для быстрых переводов и оплаты услуг. Безопасные транзакции, выгодные тарифы и круглосуточная поддержка.",
+    keywords: ["платежная система", "онлайн платежи", "денежные переводы", "электронные платежи", "финансовые услуги", "Primetek"],
     authors: [{name: "KG Friends"}],
     creator: "KG Friends",
     publisher: "Kg Friends",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
         icon: '/icon',
         apple: '/icon512_maskable.png?v=4',
     },
-    applicationName: 'Primetech',
+    applicationName: 'Primetek',
     category: 'finance',
 };
 
