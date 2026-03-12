@@ -29,12 +29,12 @@ const Footer = () => {
                     <div className={s.footer}>
                         <div className={s.text}>
                             <h1>{t.contacts}</h1>
-                            <a href="mailto:nfo@prime1.tech" className={s.contact}>
+                            <a href="mailto:info@prime1.tech" className={s.contact}>
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" strokeWidth="2">
                                     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                                     <polyline points="22,6 12,13 2,6"/>
                                 </svg>
-                                <h6>nfo@prime1.tech</h6>
+                                <h6>info@prime1.tech</h6>
                             </a>
                             <a href="tel:+996703355388" className={s.contact}>
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" strokeWidth="2">
